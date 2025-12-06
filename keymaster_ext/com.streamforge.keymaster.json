@@ -1,0 +1,9 @@
+{
+    "name": "com.streamforge.keymaster",
+    "description": "StreamForge Keymaster Native Host",
+    "path": "C:\\Users\\jdani\\projects\\StreamForge\\keymaster_ext\\native_host.bat",
+    "type": "stdio",
+    "allowed_origins": [
+        "chrome-extension://EXTENSION_ID_HERE/"
+    ]
+}

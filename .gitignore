@@ -1,0 +1,21 @@
+# Auth credentials - NEVER commit these
+headers_auth.json
+browser.json
+*.auth.json
+
+# Python
+.venv/
+__pycache__/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
