@@ -1,6 +1,7 @@
 # Auth credentials - NEVER commit these
 headers_auth.json
 browser.json
+streamforge_auth.json
 *.auth.json
 
 # Python

@@ -12,7 +12,7 @@ def get_secure_path():
     """Get the secure auth file path in user's home directory."""
     config_dir = os.path.join(os.path.expanduser("~"), ".streamforge")
     os.makedirs(config_dir, exist_ok=True)
-    return os.path.join(config_dir, "browser.json")
+    return os.path.join(config_dir, "streamforge_auth.json")
 
 def read_message():
     """Read a message from the extension."""

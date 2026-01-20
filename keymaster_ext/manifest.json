@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "StreamForge Keymaster",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Auth Bridge for StreamForge Playlist Engine",
     "permissions": [
         "cookies",
@@ -9,7 +9,9 @@
         "nativeMessaging"
     ],
     "host_permissions": [
-        "https://music.youtube.com/*"
+        "https://music.youtube.com/*",
+        "https://*.youtube.com/*",
+        "https://www.youtube.com/*"
     ],
     "action": {
         "default_popup": "popup.html"

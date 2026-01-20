@@ -73,7 +73,7 @@ def get_config_dir():
 
 def get_headers_path():
     """Get the browser headers path."""
-    return os.path.join(get_config_dir(), "browser.json")
+    return os.path.join(get_config_dir(), "streamforge_auth.json")
 
 def parse_curl_command(curl_cmd):
     """Extract headers from a curl command."""
@@ -167,13 +167,26 @@ def setup_browser_auth():
     print(f"   Found {len(headers)} headers including cookie.")
     return headers_path
 
+def check_downloads_for_auth():
+    """Check if browser.json was downloaded by the extension and move it."""
+    downloads_path = os.path.join(os.path.expanduser("~"), "Downloads", "streamforge_auth.json")
+    if os.path.exists(downloads_path):
+        import shutil
+        dest_path = get_headers_path()
+        shutil.move(downloads_path, dest_path)
+        print(f"{GREEN}✅ Found streamforge_auth.json in Downloads - moved to secure location!{RESET}")
+        return True
+    return False
+
 class StreamForge:
     def __init__(self):
         headers_path = get_headers_path()
         
         # Check if auth is set up
         if not os.path.exists(headers_path):
-            setup_browser_auth()
+            # Check if extension downloaded to Downloads folder
+            if not check_downloads_for_auth():
+                setup_browser_auth()
         
         try:
             self.yt = YTMusic(headers_path)
